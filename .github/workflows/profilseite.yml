@@ -1,0 +1,42 @@
+name: Profilseite aktualisieren
+
+on:
+  schedule:
+    - cron: "23 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - projekte.json
+      - tools/projekte.py
+      - .github/workflows/profilseite.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profilseite
+  cancel-in-progress: false
+
+jobs:
+  aktualisieren:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Projekttabelle erzeugen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 tools/projekte.py
+
+      - name: Änderung übernehmen
+        run: |
+          if git diff --quiet; then
+            echo "Keine Änderung"
+            exit 0
+          fi
+          git config user.name "uekala"
+          git config user.email "264241592+uekala@users.noreply.github.com"
+          git commit -am "Profilseite: Projektliste aktualisiert"
+          git push
