@@ -10,7 +10,7 @@ Seidenbit entwickelt Software. Hier stehen alle öffentlichen Projekte.
 <!-- Stand: 2026-11 -->
 | Projekt | Worum es geht |
 |---|---|
-| **[Exitcheck](https://github.com/seidenbit/exitcheck)** | Wertet RVTools-Exporte für den Umstieg von VMware auf Proxmox VE oder Hyper-V aus: Kosten über einen frei wählbaren Zeitraum, Stolpersteine je VM und eine Aufwandsschätzung. Rechnet vollständig im Browser und sendet nichts. [Ausprobieren](https://seidenbit.github.io/exitcheck/) |
+| **[Exitcheck](https://github.com/seidenbit/exitcheck)** | Wertet RVTools-Exporte für den Umstieg von VMware auf Proxmox VE oder Hyper-V aus: Kosten über einen frei wählbaren Zeitraum, Stolpersteine je VM und eine Aufwandsschätzung. Rechnet vollständig im Browser und sendet nichts. [Ausprobieren](https://uekala.github.io/exitcheck/) |
 <!-- projekte:end -->
 
 ### Mitmachen
